@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-primary: #f2f2f7;
+    --bg-card: #ffffff;
+    --bg-card-hover: #f9f9fb;
+    --text-primary: #1c1c1e;
+    --text-secondary: #8e8e93;
+    --border-color: #e5e5ea;
+    --accent-blue: #007aff;
+  }
+
+  .dark {
+    --bg-primary: #000000;
+    --bg-card: #1c1c1e;
+    --bg-card-hover: #2c2c2e;
+    --text-primary: #ffffff;
+    --text-secondary: #8e8e93;
+    --border-color: #38383a;
+    --accent-blue: #0a84ff;
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    overscroll-behavior-y: none;
+  }
+}
+
+/* Custom iOS Glassmorphism & Animations */
+.ios-glass {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.dark .ios-glass {
+  background: rgba(28, 28, 30, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* Hide scrollbar for clean iOS feel */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* iOS Spring Checkbox Animation */
+@keyframes ios-check {
+  0% { transform: scale(0.8); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+.animate-ios-check {
+  animation: ios-check 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Smooth Slide Sheet Animation */
+@keyframes slide-up {
+  from { transform: translateY(100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
