@@ -1,10 +1,11 @@
-// Service Worker for iOS Reminders PWA Offline & Notifications
 const CACHE_NAME = 'ios-reminders-v1';
 const ASSETS_TO_CACHE = [
-  './',
-  './index.html',
-  './manifest.json',
-  './favicon.svg'
+  '/',
+  '/index.html',
+  '/manifest.json',
+  '/favicon.svg',
+  '/icon-192.png',
+  '/icon-512.png'
 ];
 
 self.addEventListener('install', (event) => {
